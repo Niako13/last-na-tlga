@@ -33,27 +33,27 @@ public class Appointment extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        Fn = new javax.swing.JTextField();
-        Ln = new javax.swing.JTextField();
+        jfirstname = new javax.swing.JTextField();
+        jlastname = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jemailAddress = new javax.swing.JTextField();
+        jaddress = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox11 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        appointmentType = new javax.swing.JComboBox<>();
+        japtYear = new javax.swing.JComboBox<>();
+        japtDay = new javax.swing.JComboBox<>();
+        japtMonth = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        Age = new javax.swing.JTextField();
+        jage = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox14 = new javax.swing.JComboBox<>();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        birthMonth = new javax.swing.JComboBox<>();
+        birthDay = new javax.swing.JComboBox<>();
+        birthYear = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -67,12 +67,12 @@ public class Appointment extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel21 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jcontactNumber = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        jComboBox10 = new javax.swing.JComboBox<>();
+        japtHour = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
-        jComboBox15 = new javax.swing.JComboBox<>();
-        jComboBox16 = new javax.swing.JComboBox<>();
+        japtMinute = new javax.swing.JComboBox<>();
+        japtMeridiem = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
 
         jLabel6.setText("jLabel6");
@@ -84,84 +84,94 @@ public class Appointment extends javax.swing.JFrame {
         jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1050, 800));
+        setMinimumSize(new java.awt.Dimension(1040, 640));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        Fn.addActionListener(new java.awt.event.ActionListener() {
+        jfirstname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FnActionPerformed(evt);
+                jfirstnameActionPerformed(evt);
             }
         });
-        jPanel1.add(Fn);
-        Fn.setBounds(130, 150, 310, 22);
+        jPanel1.add(jfirstname);
+        jfirstname.setBounds(130, 150, 310, 22);
 
-        Ln.addActionListener(new java.awt.event.ActionListener() {
+        jlastname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LnActionPerformed(evt);
+                jlastnameActionPerformed(evt);
             }
         });
-        jPanel1.add(Ln);
-        Ln.setBounds(130, 200, 310, 22);
+        jPanel1.add(jlastname);
+        jlastname.setBounds(130, 200, 310, 22);
 
         jLabel9.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel9.setText("First Name ");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(60, 160, 70, 19);
+        jLabel9.setBounds(50, 150, 70, 19);
 
         jLabel3.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel3.setText("Last Name");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(60, 210, 60, 19);
+        jLabel3.setBounds(50, 200, 60, 19);
 
         jLabel11.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel11.setText("Address");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(560, 150, 70, 19);
+        jLabel11.setBounds(540, 150, 70, 19);
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        jemailAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                jemailAddressActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField7);
-        jTextField7.setBounds(680, 200, 310, 22);
+        jPanel1.add(jemailAddress);
+        jemailAddress.setBounds(680, 200, 310, 22);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jaddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jaddressActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(680, 150, 310, 22);
+        jPanel1.add(jaddress);
+        jaddress.setBounds(680, 150, 310, 22);
 
         jLabel12.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel12.setText("Email Address");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(550, 200, 90, 19);
+        jLabel12.setBounds(540, 200, 90, 19);
 
         jLabel14.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel14.setText("Type of Appointment");
         jPanel1.add(jLabel14);
         jLabel14.setBounds(540, 260, 120, 20);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Check-Up\t", "Tuli", "Kapon", "Surgery", "putol tite", " " }));
-        jPanel1.add(jComboBox2);
-        jComboBox2.setBounds(680, 260, 240, 22);
+        appointmentType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Check-Up\t", "Tuli", "Kapon", "Surgery", " " }));
+        jPanel1.add(appointmentType);
+        appointmentType.setBounds(680, 260, 240, 22);
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", " " }));
-        jPanel1.add(jComboBox11);
-        jComboBox11.setBounds(870, 310, 80, 22);
+        japtYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2024", "2025" }));
+        jPanel1.add(japtYear);
+        japtYear.setBounds(860, 310, 80, 22);
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        jPanel1.add(jComboBox6);
-        jComboBox6.setBounds(770, 310, 70, 22);
+        japtDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        japtDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                japtDayActionPerformed(evt);
+            }
+        });
+        jPanel1.add(japtDay);
+        japtDay.setBounds(770, 310, 70, 22);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Month", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
-        jPanel1.add(jComboBox4);
-        jComboBox4.setBounds(680, 310, 70, 22);
+        japtMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Month", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        japtMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                japtMonthActionPerformed(evt);
+            }
+        });
+        jPanel1.add(japtMonth);
+        japtMonth.setBounds(680, 310, 70, 22);
 
         jLabel15.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel15.setText("Date of Appointment");
@@ -178,35 +188,35 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(810, 470, 160, 26);
 
-        Age.addActionListener(new java.awt.event.ActionListener() {
+        jage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgeActionPerformed(evt);
+                jageActionPerformed(evt);
             }
         });
-        jPanel1.add(Age);
-        Age.setBounds(130, 250, 80, 22);
+        jPanel1.add(jage);
+        jage.setBounds(130, 250, 80, 22);
 
         jLabel4.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel4.setText("Age");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(60, 250, 50, 20);
+        jLabel4.setBounds(50, 250, 50, 20);
 
         jLabel5.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel5.setText("Birth Date");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(50, 320, 80, 19);
+        jLabel5.setBounds(50, 300, 80, 19);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Month", "January", "February", "March ", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(130, 310, 80, 22);
+        birthMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Month", "January", "February", "March ", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        jPanel1.add(birthMonth);
+        birthMonth.setBounds(130, 300, 80, 22);
 
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        jPanel1.add(jComboBox14);
-        jComboBox14.setBounds(220, 310, 80, 22);
+        birthDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jPanel1.add(birthDay);
+        birthDay.setBounds(220, 300, 80, 22);
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005" }));
-        jPanel1.add(jComboBox7);
-        jComboBox7.setBounds(320, 310, 80, 22);
+        birthYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024" }));
+        jPanel1.add(birthYear);
+        birthYear.setBounds(310, 300, 80, 22);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
@@ -235,7 +245,7 @@ public class Appointment extends javax.swing.JFrame {
         jPanel3.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel1.setText("HealthCenter@gmail.com");
+        jLabel1.setText("healthcenter@gmail.com");
         jPanel3.add(jLabel1);
         jLabel1.setBounds(860, 40, 140, 20);
 
@@ -250,7 +260,7 @@ public class Appointment extends javax.swing.JFrame {
         jLabel18.setBounds(930, 20, 70, 16);
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(0, 520, 1020, 70);
+        jPanel3.setBounds(10, 520, 1020, 70);
 
         jLabel16.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         jLabel16.setText("APPOINTMENT");
@@ -260,7 +270,7 @@ public class Appointment extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel20.setText("Gender");
         jPanel1.add(jLabel20);
-        jLabel20.setBounds(50, 370, 43, 19);
+        jLabel20.setBounds(50, 350, 43, 19);
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
@@ -271,41 +281,46 @@ public class Appointment extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jRadioButton1);
-        jRadioButton1.setBounds(130, 370, 98, 24);
+        jRadioButton1.setBounds(130, 350, 98, 24);
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jRadioButton2.setText("Female");
         jPanel1.add(jRadioButton2);
-        jRadioButton2.setBounds(230, 370, 80, 24);
+        jRadioButton2.setBounds(230, 350, 80, 24);
 
         jLabel21.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel21.setText(" Contact Number");
         jPanel1.add(jLabel21);
-        jLabel21.setBounds(50, 420, 100, 19);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(150, 420, 280, 22);
+        jLabel21.setBounds(50, 400, 100, 19);
+        jPanel1.add(jcontactNumber);
+        jcontactNumber.setBounds(160, 400, 280, 22);
 
         jLabel22.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel22.setText("Appointment Time");
         jPanel1.add(jLabel22);
-        jLabel22.setBounds(540, 370, 110, 19);
+        jLabel22.setBounds(540, 350, 110, 19);
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox10);
-        jComboBox10.setBounds(680, 370, 72, 22);
+        japtHour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        japtHour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                japtHourActionPerformed(evt);
+            }
+        });
+        jPanel1.add(japtHour);
+        japtHour.setBounds(680, 350, 72, 22);
 
         jLabel23.setText(":");
         jPanel1.add(jLabel23);
-        jLabel23.setBounds(760, 370, 40, 20);
+        jLabel23.setBounds(760, 350, 40, 20);
 
-        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox15);
-        jComboBox15.setBounds(780, 370, 72, 22);
+        japtMinute.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "15", "30", "45" }));
+        jPanel1.add(japtMinute);
+        japtMinute.setBounds(770, 350, 72, 22);
 
-        jComboBox16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox16);
-        jComboBox16.setBounds(880, 370, 72, 22);
+        japtMeridiem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
+        jPanel1.add(japtMeridiem);
+        japtMeridiem.setBounds(860, 350, 72, 22);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1040, 610);
@@ -317,33 +332,86 @@ public class Appointment extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgeActionPerformed
+    private void jageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jageActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AgeActionPerformed
+    }//GEN-LAST:event_jageActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jaddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jaddressActionPerformed
 
-    private void LnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LnActionPerformed
+    private void jlastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlastnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LnActionPerformed
+    }//GEN-LAST:event_jlastnameActionPerformed
 
-    private void FnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FnActionPerformed
+    private void jfirstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfirstnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FnActionPerformed
+    }//GEN-LAST:event_jfirstnameActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void jemailAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jemailAddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_jemailAddressActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
+    
+        APPOINTMENT_CONFIRMATION confirmAppointment = new APPOINTMENT_CONFIRMATION();
+        
+        confirmAppointment.lblFirstName.setText(Appointment.jfirstname.getText());
+        confirmAppointment.lblLastName.setText(Appointment.jlastname.getText());
+        confirmAppointment.lblAge.setText(Appointment.jage.getText());
+               
+        String selectedBDay = birthDay.getSelectedItem().toString();
+        String selectedBMonth = birthMonth.getSelectedItem().toString();
+        String selectedBYear = birthYear.getSelectedItem().toString();
+        String birthDate = selectedBMonth + " " + selectedBDay + ", " + selectedBYear;
+        confirmAppointment.lblBDate.setText(birthDate);
+              
+        if (jRadioButton1.isSelected()) {
+        confirmAppointment.lblGender.setText("Male");
+        } else if (jRadioButton2.isSelected()) {
+        confirmAppointment.lblGender.setText("Female");
+        }
+              
+        confirmAppointment.lblContactNumber.setText(Appointment.jcontactNumber.getText());
+        confirmAppointment.lblAddress.setText(Appointment.jaddress.getText());
+        confirmAppointment.lblEmailAddress.setText(Appointment.jemailAddress.getText());
+        
+        String selectedAppointmentType = appointmentType.getSelectedItem().toString();
+        confirmAppointment.lblAppointmentType.setText(selectedAppointmentType);
+          
+        String selectedAptMonth = japtMonth.getSelectedItem().toString();
+        String selectedAptDay = japtDay.getSelectedItem().toString();
+        String selectedAptYear = japtYear.getSelectedItem().toString();
+        String appointmentDate = selectedAptMonth + " " + selectedAptDay + ", " + selectedAptYear;
+        confirmAppointment.lblAppointmentDate.setText(appointmentDate);
+        
+        String selectedHour = japtHour.getSelectedItem().toString();
+        String selectedMinute = japtMinute.getSelectedItem().toString();
+        String selectedMeridiem = japtMeridiem.getSelectedItem().toString();
+        String appointmentTime = selectedHour + " " + selectedMinute + ", " + selectedMeridiem;
+        confirmAppointment.lblAptTime.setText(appointmentTime);
+        
+        confirmAppointment.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void japtHourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_japtHourActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_japtHourActionPerformed
+
+    private void japtMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_japtMonthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_japtMonthActionPerformed
+
+    private void japtDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_japtDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_japtDayActionPerformed
 
     /**
      * @param args the command line arguments
@@ -371,6 +439,7 @@ public class Appointment extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Appointment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -381,24 +450,15 @@ public class Appointment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Age;
-    private javax.swing.JTextField Fn;
-    private javax.swing.JTextField Ln;
+    private javax.swing.JComboBox<String> appointmentType;
+    private javax.swing.JComboBox<String> birthDay;
+    private javax.swing.JComboBox<String> birthMonth;
+    private javax.swing.JComboBox<String> birthYear;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox14;
-    private javax.swing.JComboBox<String> jComboBox15;
-    private javax.swing.JComboBox<String> jComboBox16;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
@@ -425,10 +485,19 @@ public class Appointment extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField7;
+    public static javax.swing.JRadioButton jRadioButton1;
+    public static javax.swing.JRadioButton jRadioButton2;
+    public static javax.swing.JTextField jaddress;
+    public static javax.swing.JTextField jage;
+    public static javax.swing.JComboBox<String> japtDay;
+    public static javax.swing.JComboBox<String> japtHour;
+    public static javax.swing.JComboBox<String> japtMeridiem;
+    public static javax.swing.JComboBox<String> japtMinute;
+    public static javax.swing.JComboBox<String> japtMonth;
+    public static javax.swing.JComboBox<String> japtYear;
+    public static javax.swing.JTextField jcontactNumber;
+    public static javax.swing.JTextField jemailAddress;
+    public static javax.swing.JTextField jfirstname;
+    public static javax.swing.JTextField jlastname;
     // End of variables declaration//GEN-END:variables
 }

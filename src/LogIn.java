@@ -1,4 +1,6 @@
 
+
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 
 /*
@@ -111,14 +113,14 @@ public class LogIn extends javax.swing.JFrame {
                         .addGap(35, 35, 35))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(50, 50, 50))))
+                        .addGap(53, 53, 53))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(16, 16, 16)
                 .addComponent(jLabel3)
-                .addGap(36, 36, 36)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jtuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -199,8 +201,9 @@ public class LogIn extends javax.swing.JFrame {
         }
         else if (jtuser.getText().contains("admin") && jpassword.getText().contains("1234")){
             
-            DoctorsRecord Login = new DoctorsRecord();
-            Login.setVisible(true);
+            
+        
+        DoctorsRecord record = new DoctorsRecord();
             this.dispose();
         }
         else{
@@ -251,13 +254,10 @@ public class LogIn extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+        /* Create and display the form */        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LogIn().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new LogIn().setVisible(true);
         });
     }
 

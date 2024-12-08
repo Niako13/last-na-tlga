@@ -7,14 +7,50 @@
  *
  * @author Nico
  */
+import java.util.HashMap;
+import javax.swing.table.DefaultTableModel;
 public class DoctorsRecord extends javax.swing.JFrame {
 
     /**
      * Creates new form DoctorsRecord
      */
-    public DoctorsRecord() {
+    
+
+    
+    public DoctorsRecord(HashMap<String, String>Appointment) {
         initComponents();
+        String[] columns =  {"First Name", "Last Name", "Age", "Birthdate", "Gender", "Contact Number", "Address", "Email Address", "Type of Appointment", "Appointment Date", "Appointment Time"};
+        
+        DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+        
+        jTable1.setModel(tableModel);
+        
+        String firstName = Appointment.get("firstName");
+        String lastName = Appointment.get("lastName");
+        String age = Appointment.get("age");
+        String contactNumber = Appointment.get("contactNumber");
+        String birthDate = Appointment.get("birthDate");
+        String gender = Appointment.get("gender");
+        String address = Appointment.get("address");
+        String emailAddress = Appointment.get("emailAddress");
+        String selectedAppointmentType = Appointment.get("selectedAppointmentType");
+        String appointmentDate = Appointment.get("appointmentDate");
+        String appointmentTime = Appointment.get("appointmentTime");
+        
+        tableModel.addRow(new Object[]{firstName, lastName, age, contactNumber, birthDate, gender, address, emailAddress, selectedAppointmentType, appointmentDate, appointmentTime});
+        
+        setVisible(true);
+        
     }
+
+    DoctorsRecord() {
+        initComponents();
+        setVisible(true);
+    }
+
+
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,18 +64,16 @@ public class DoctorsRecord extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1250, 600));
+        setSize(new java.awt.Dimension(1250, 600));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
@@ -47,76 +81,26 @@ public class DoctorsRecord extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcenterui/image-removebg-preview (2) (1).png"))); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 10, 50, 40);
+        jLabel2.setBounds(10, 20, 50, 40);
 
         jLabel3.setFont(new java.awt.Font("Serif", 0, 36)); // NOI18N
         jLabel3.setText("Health Center");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(660, 20, 220, 50);
-
-        jLabel1.setFont(new java.awt.Font("Serif", 0, 36)); // NOI18N
-        jLabel1.setText("Doctor's Records");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(70, 10, 390, 47);
+        jLabel3.setBounds(70, 10, 220, 50);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, -2, 1230, 70);
 
-        jLabel4.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
-        jLabel4.setText("Doctor's Name:");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(60, 126, 190, 20);
-
-        jLabel5.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
-        jLabel5.setText("Francis");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(220, 120, 140, 30);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(670, 130, 110, 22);
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(780, 130, 72, 22);
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2024" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(860, 130, 72, 22);
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setText("Date:");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(620, 130, 30, 16);
-
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "Name", "Age", "Birthdate", "Gender", "Contact Number", "Address", "Email Address", "Type of Appointment", "Appointment Date", "Appointment Time"
+                "First Name", "Last Name", "Age", "Birthdate", "Gender", "Contact Number", "Address", "Email Address", "Type of Appointment", "Appointment Date", "Appointment Time"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, true
+                true, false, false, false, false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -128,20 +112,53 @@ public class DoctorsRecord extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(0, 170, 1220, 380);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel5.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel5.setText("Francis Juniper");
+
+        jLabel4.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jLabel4.setText("Doctor's Name:");
+
+        jLabel1.setFont(new java.awt.Font("Serif", 0, 36)); // NOI18N
+        jLabel1.setText("Doctor's Records");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(459, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(451, 451, 451))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(478, 478, 478)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(7, 7, 7)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(496, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 70, 1230, 580);
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
-
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,16 +196,13 @@ public class DoctorsRecord extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

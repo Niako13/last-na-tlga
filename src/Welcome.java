@@ -121,7 +121,7 @@ public class Welcome extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcenterui/image-removebg-preview (2) (1).png"))); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Serif", 0, 36)); // NOI18N
-        jLabel10.setText("HEALTH CENTER");
+        jLabel10.setText("REGALADO HEALTH CENTER");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -132,7 +132,7 @@ public class Welcome extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addContainerGap(770, Short.MAX_VALUE))
+                .addContainerGap(565, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +185,7 @@ public class Welcome extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel5.setText("Welcome to HealthMed!");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(90, 310, 200, 24);
+        jLabel5.setBounds(80, 310, 200, 24);
 
         jLabel6.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
         jLabel6.setText("Where your health and well-being are our top priority.");
@@ -219,6 +219,7 @@ public class Welcome extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

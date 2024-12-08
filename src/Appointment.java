@@ -1,3 +1,6 @@
+
+import java.util.HashMap;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -145,15 +148,20 @@ public class Appointment extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel14.setText("Type of Appointment");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(540, 260, 120, 20);
+        jLabel14.setBounds(540, 250, 120, 20);
 
-        appointmentType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Check-Up\t", "Tuli", "Kapon", "Surgery", " " }));
+        appointmentType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Check-Up\t", "Pediatrician", " ", " " }));
         jPanel1.add(appointmentType);
-        appointmentType.setBounds(680, 260, 240, 22);
+        appointmentType.setBounds(680, 250, 240, 22);
 
         japtYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2024", "2025" }));
+        japtYear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                japtYearActionPerformed(evt);
+            }
+        });
         jPanel1.add(japtYear);
-        japtYear.setBounds(860, 310, 80, 22);
+        japtYear.setBounds(900, 300, 80, 22);
 
         japtDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         japtDay.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +170,7 @@ public class Appointment extends javax.swing.JFrame {
             }
         });
         jPanel1.add(japtDay);
-        japtDay.setBounds(770, 310, 70, 22);
+        japtDay.setBounds(820, 300, 70, 22);
 
         japtMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Month", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
         japtMonth.addActionListener(new java.awt.event.ActionListener() {
@@ -171,12 +179,12 @@ public class Appointment extends javax.swing.JFrame {
             }
         });
         jPanel1.add(japtMonth);
-        japtMonth.setBounds(680, 310, 70, 22);
+        japtMonth.setBounds(680, 300, 130, 22);
 
         jLabel15.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel15.setText("Date of Appointment");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(540, 310, 120, 19);
+        jLabel15.setBounds(540, 300, 120, 19);
 
         jButton1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jButton1.setText("Confirm Appointment");
@@ -208,15 +216,15 @@ public class Appointment extends javax.swing.JFrame {
 
         birthMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Month", "January", "February", "March ", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
         jPanel1.add(birthMonth);
-        birthMonth.setBounds(130, 300, 80, 22);
+        birthMonth.setBounds(130, 300, 130, 22);
 
         birthDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         jPanel1.add(birthDay);
-        birthDay.setBounds(220, 300, 80, 22);
+        birthDay.setBounds(270, 300, 80, 22);
 
         birthYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024" }));
         jPanel1.add(birthYear);
-        birthYear.setBounds(310, 300, 80, 22);
+        birthYear.setBounds(360, 300, 80, 22);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
@@ -367,11 +375,9 @@ public class Appointment extends javax.swing.JFrame {
         String birthDate = selectedBMonth + " " + selectedBDay + ", " + selectedBYear;
         confirmAppointment.lblBDate.setText(birthDate);
               
-        if (jRadioButton1.isSelected()) {
-        confirmAppointment.lblGender.setText("Male");
-        } else if (jRadioButton2.isSelected()) {
-        confirmAppointment.lblGender.setText("Female");
-        }
+        String gender = jRadioButton1.isSelected() ? "Male" : jRadioButton2.isSelected() ? "Female" : "Not Selected";
+        confirmAppointment.lblGender.setText(gender);
+
               
         confirmAppointment.lblContactNumber.setText(Appointment.jcontactNumber.getText());
         confirmAppointment.lblAddress.setText(Appointment.jaddress.getText());
@@ -389,8 +395,30 @@ public class Appointment extends javax.swing.JFrame {
         String selectedHour = japtHour.getSelectedItem().toString();
         String selectedMinute = japtMinute.getSelectedItem().toString();
         String selectedMeridiem = japtMeridiem.getSelectedItem().toString();
-        String appointmentTime = selectedHour + " " + selectedMinute + ", " + selectedMeridiem;
+        String appointmentTime = selectedHour + " : " + selectedMinute + " " + selectedMeridiem;
         confirmAppointment.lblAptTime.setText(appointmentTime);
+        
+        HashMap<String, String> patientRecord = new HashMap<>();
+        String firstName = jfirstname.getText();
+        String lastName = jlastname.getText();
+        String age = jage.getText();
+        String contactNumber = jcontactNumber.getText();
+        String address = jaddress.getText();
+        String emailAddress = jemailAddress.getText();
+        
+        patientRecord.put("firstName", firstName);
+        patientRecord.put("lastName", lastName);
+        patientRecord.put("age", age);
+        patientRecord.put("contactNumber", contactNumber);
+        patientRecord.put("birthDate", birthDate);
+        patientRecord.put("gendder", gender);
+        patientRecord.put("address", address);
+        patientRecord.put("emailAddress", emailAddress);
+        patientRecord.put("selectedAppointmentType", selectedAppointmentType);
+        patientRecord.put("appointmentDate", appointmentDate);
+        patientRecord.put("appointmentTime", appointmentTime);
+        
+        DoctorsRecord record = new DoctorsRecord(patientRecord);
         
         confirmAppointment.setVisible(true);
         this.dispose();
@@ -412,6 +440,10 @@ public class Appointment extends javax.swing.JFrame {
     private void japtDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_japtDayActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_japtDayActionPerformed
+
+    private void japtYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_japtYearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_japtYearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -450,10 +482,10 @@ public class Appointment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> appointmentType;
-    private javax.swing.JComboBox<String> birthDay;
-    private javax.swing.JComboBox<String> birthMonth;
-    private javax.swing.JComboBox<String> birthYear;
+    public javax.swing.JComboBox<String> appointmentType;
+    public javax.swing.JComboBox<String> birthDay;
+    public javax.swing.JComboBox<String> birthMonth;
+    public javax.swing.JComboBox<String> birthYear;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;

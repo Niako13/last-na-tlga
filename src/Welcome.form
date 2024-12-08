@@ -6,7 +6,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -202,7 +202,7 @@
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="770" max="32767" attributes="0"/>
+                          <EmptySpace pref="565" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -234,7 +234,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Serif" size="36" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="HEALTH CENTER"/>
+                    <Property name="text" type="java.lang.String" value="REGALADO HEALTH CENTER"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -296,7 +296,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="90" y="310" width="200" height="-1"/>
+              <AbsoluteConstraints x="80" y="310" width="200" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

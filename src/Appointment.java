@@ -12,6 +12,10 @@ import java.util.HashMap;
  */
 public class Appointment extends javax.swing.JFrame {
 
+    static void get(String firstName) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     /**
      * Creates new form Appointment
      */
@@ -418,7 +422,7 @@ public class Appointment extends javax.swing.JFrame {
         patientRecord.put("appointmentDate", appointmentDate);
         patientRecord.put("appointmentTime", appointmentTime);
         
-        DoctorsRecord record = new DoctorsRecord(patientRecord);
+        AppointmentData.appointments.add(patientRecord);
         
         confirmAppointment.setVisible(true);
         this.dispose();

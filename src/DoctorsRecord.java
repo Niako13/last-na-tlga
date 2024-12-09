@@ -17,36 +17,37 @@ public class DoctorsRecord extends javax.swing.JFrame {
     
 
     
-    public DoctorsRecord(HashMap<String, String>Appointment) {
+    public DoctorsRecord() {
         initComponents();
-        String[] columns =  {"First Name", "Last Name", "Age", "Birthdate", "Gender", "Contact Number", "Address", "Email Address", "Type of Appointment", "Appointment Date", "Appointment Time"};
+        displayAppointments();
+}
+
+        private void displayAppointments(){
+        String columns[] =  {"First Name", "Last Name", "Age", "Birthdate", "Gender", "Contact Number", "Address", "Email Address", "Type of Appointment", "Appointment Date", "Appointment Time"};
         
         DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
         
-        jTable1.setModel(tableModel);
+        tableModel.setColumnIdentifiers(columns);
         
-        String firstName = Appointment.get("firstName");
-        String lastName = Appointment.get("lastName");
-        String age = Appointment.get("age");
-        String contactNumber = Appointment.get("contactNumber");
-        String birthDate = Appointment.get("birthDate");
-        String gender = Appointment.get("gender");
-        String address = Appointment.get("address");
-        String emailAddress = Appointment.get("emailAddress");
-        String selectedAppointmentType = Appointment.get("selectedAppointmentType");
-        String appointmentDate = Appointment.get("appointmentDate");
-        String appointmentTime = Appointment.get("appointmentTime");
-        
-        tableModel.addRow(new Object[]{firstName, lastName, age, contactNumber, birthDate, gender, address, emailAddress, selectedAppointmentType, appointmentDate, appointmentTime});
-        
-        setVisible(true);
-        
+        for (HashMap<String, String> appointment : AppointmentData.appointments) {
+        tableModel.addRow(new Object[] {
+            appointment.get("firstName"),
+            appointment.get("lastName"),
+            appointment.get("age"),
+            appointment.get("birthDate"),
+            appointment.get("gender"),
+            appointment.get("contactNumber"),
+            appointment.get("address"),
+            appointment.get("emailAddress"),
+            appointment.get("selectedAppointmentType"),
+            appointment.get("appointmentDate"),
+            appointment.get("appointmentTime"),
+        });
     }
 
-    DoctorsRecord() {
-        initComponents();
-        setVisible(true);
-    }
+    setVisible(true);
+}
+
 
 
 

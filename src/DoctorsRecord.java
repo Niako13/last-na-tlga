@@ -23,7 +23,7 @@ public class DoctorsRecord extends javax.swing.JFrame {
 }
 
         private void displayAppointments(){
-        String columns[] =  {"First Name", "Last Name", "Age", "Birthdate", "Gender", "Contact Number", "Address", "Email Address", "Type of Appointment", "Appointment Date", "Appointment Time"};
+        String columns[] =  {"First Name", "Last Name", "Age", "Birthdate", "Gender", "Contact Number", "Address", "Email Address", "Appointment Type", "Appointment Date", "Appointment Time"};
         
         DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
         
@@ -71,9 +71,10 @@ public class DoctorsRecord extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1250, 600));
+        setMinimumSize(new java.awt.Dimension(1230, 680));
         setSize(new java.awt.Dimension(1250, 600));
         getContentPane().setLayout(null);
 
@@ -82,7 +83,7 @@ public class DoctorsRecord extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcenterui/image-removebg-preview (2) (1).png"))); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 20, 50, 40);
+        jLabel2.setBounds(30, 20, 50, 40);
 
         jLabel3.setFont(new java.awt.Font("Serif", 0, 36)); // NOI18N
         jLabel3.setText("Health Center");
@@ -97,7 +98,7 @@ public class DoctorsRecord extends javax.swing.JFrame {
 
             },
             new String [] {
-                "First Name", "Last Name", "Age", "Birthdate", "Gender", "Contact Number", "Address", "Email Address", "Type of Appointment", "Appointment Date", "Appointment Time"
+                "First Name", "Last Name", "Age", "Birthdate", "Gender", "Contact Number", "Address", "Email Address", "Appointment Type", "Appointment Date", "Appointment Time"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -124,34 +125,44 @@ public class DoctorsRecord extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Serif", 0, 36)); // NOI18N
         jLabel1.setText("Doctor's Records");
 
+        jToggleButton1.setText("Exit");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(459, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(451, 451, 451))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(478, 478, 478)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(478, 478, 478)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(502, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(7, 7, 7)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(496, Short.MAX_VALUE))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 432, Short.MAX_VALUE)
+                .addComponent(jToggleButton1)
+                .addGap(43, 43, 43))
         );
 
         getContentPane().add(jPanel2);
@@ -160,6 +171,12 @@ public class DoctorsRecord extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        Welcome homepage = new Welcome();
+        homepage.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,5 +223,6 @@ public class DoctorsRecord extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

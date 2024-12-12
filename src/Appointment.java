@@ -1,6 +1,8 @@
 
+import java.awt.event.KeyEvent;
 import java.util.HashMap;
-
+import java.util.HashSet;
+import javax.swing.JOptionPane;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -76,10 +78,7 @@ public class Appointment extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jcontactNumber = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        japtHour = new javax.swing.JComboBox<>();
-        jLabel23 = new javax.swing.JLabel();
-        japtMinute = new javax.swing.JComboBox<>();
-        japtMeridiem = new javax.swing.JComboBox<>();
+        jtime = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
 
         jLabel6.setText("jLabel6");
@@ -113,20 +112,20 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.add(jlastname);
         jlastname.setBounds(130, 200, 310, 22);
 
-        jLabel9.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel9.setText("First Name ");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(50, 150, 70, 19);
+        jLabel9.setBounds(50, 150, 90, 22);
 
-        jLabel3.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel3.setText("Last Name");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(50, 200, 60, 19);
+        jLabel3.setBounds(50, 200, 80, 22);
 
-        jLabel11.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel11.setText("Address");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(540, 150, 70, 19);
+        jLabel11.setBounds(50, 400, 90, 22);
 
         jemailAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,23 +141,23 @@ public class Appointment extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jaddress);
-        jaddress.setBounds(680, 150, 310, 22);
+        jaddress.setBounds(130, 400, 310, 22);
 
-        jLabel12.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel12.setText("Email Address");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(540, 200, 90, 19);
+        jLabel12.setBounds(540, 200, 110, 22);
 
-        jLabel14.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel14.setText("Type of Appointment");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(540, 250, 120, 20);
+        jLabel14.setBounds(540, 250, 140, 20);
 
-        appointmentType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Check-Up\t", "Pediatrician", " ", " " }));
+        appointmentType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Check-Up\t", "Pediatrician", "Vaccination", "Fever", "Cough" }));
         jPanel1.add(appointmentType);
         appointmentType.setBounds(680, 250, 240, 22);
 
-        japtYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "2024", "2025" }));
+        japtYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2024", "2025" }));
         japtYear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 japtYearActionPerformed(evt);
@@ -167,7 +166,7 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.add(japtYear);
         japtYear.setBounds(900, 300, 80, 22);
 
-        japtDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        japtDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         japtDay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 japtDayActionPerformed(evt);
@@ -176,7 +175,7 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.add(japtDay);
         japtDay.setBounds(820, 300, 70, 22);
 
-        japtMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Month", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        japtMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
         japtMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 japtMonthActionPerformed(evt);
@@ -185,11 +184,12 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.add(japtMonth);
         japtMonth.setBounds(680, 300, 130, 22);
 
-        jLabel15.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel15.setText("Date of Appointment");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(540, 300, 120, 19);
+        jLabel15.setBounds(540, 300, 140, 22);
 
+        jButton1.setBackground(new java.awt.Color(204, 255, 255));
         jButton1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jButton1.setText("Confirm Appointment");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -208,44 +208,44 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.add(jage);
         jage.setBounds(130, 250, 80, 22);
 
-        jLabel4.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel4.setText("Age");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(50, 250, 50, 20);
+        jLabel4.setBounds(50, 250, 80, 20);
 
-        jLabel5.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel5.setText("Birth Date");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(50, 300, 80, 19);
+        jLabel5.setBounds(50, 300, 100, 22);
 
-        birthMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Month", "January", "February", "March ", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        birthMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March ", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
         jPanel1.add(birthMonth);
         birthMonth.setBounds(130, 300, 130, 22);
 
-        birthDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        birthDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         jPanel1.add(birthDay);
         birthDay.setBounds(270, 300, 80, 22);
 
-        birthYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024" }));
+        birthYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024" }));
         jPanel1.add(birthYear);
         birthYear.setBounds(360, 300, 80, 22);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
-        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(153, 255, 255));
         jPanel4.setLayout(null);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcenterui/image-removebg-preview (2) (1).png"))); // NOI18N
         jLabel10.setText("jLabel10");
         jPanel4.add(jLabel10);
-        jLabel10.setBounds(20, 20, 40, 30);
+        jLabel10.setBounds(40, 20, 40, 30);
 
         jLabel2.setBackground(new java.awt.Color(255, 153, 255));
         jLabel2.setFont(new java.awt.Font("Serif", 0, 36)); // NOI18N
         jLabel2.setText("Health Center");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(60, 10, 230, 47);
+        jLabel2.setBounds(90, 10, 230, 47);
 
         jPanel2.add(jPanel4);
         jPanel4.setBounds(0, -10, 1040, 70);
@@ -253,21 +253,21 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 10, 1060, 60);
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(153, 255, 255));
         jPanel3.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Serif", 3, 12)); // NOI18N
         jLabel1.setText("healthcenter@gmail.com");
         jPanel3.add(jLabel1);
-        jLabel1.setBounds(860, 40, 140, 20);
+        jLabel1.setBounds(870, 40, 140, 20);
 
-        jLabel17.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Serif", 3, 12)); // NOI18N
         jLabel17.setText("Have a concern? Contact us:");
         jPanel3.add(jLabel17);
         jLabel17.setBounds(850, 0, 150, 16);
 
-        jLabel18.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        jLabel18.setText("0123456789");
+        jLabel18.setFont(new java.awt.Font("Serif", 3, 12)); // NOI18N
+        jLabel18.setText("0943306782");
         jPanel3.add(jLabel18);
         jLabel18.setBounds(930, 20, 70, 16);
 
@@ -279,10 +279,10 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.add(jLabel16);
         jLabel16.setBounds(440, 80, 180, 32);
 
-        jLabel20.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel20.setText("Gender");
         jPanel1.add(jLabel20);
-        jLabel20.setBounds(50, 350, 43, 19);
+        jLabel20.setBounds(50, 350, 70, 22);
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
@@ -301,38 +301,26 @@ public class Appointment extends javax.swing.JFrame {
         jPanel1.add(jRadioButton2);
         jRadioButton2.setBounds(230, 350, 80, 24);
 
-        jLabel21.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
-        jLabel21.setText(" Contact Number");
+        jLabel21.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
+        jLabel21.setText("Contact Number");
         jPanel1.add(jLabel21);
-        jLabel21.setBounds(50, 400, 100, 19);
+        jLabel21.setBounds(540, 150, 120, 22);
         jPanel1.add(jcontactNumber);
-        jcontactNumber.setBounds(160, 400, 280, 22);
+        jcontactNumber.setBounds(680, 150, 310, 22);
 
-        jLabel22.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Serif", 0, 16)); // NOI18N
         jLabel22.setText("Appointment Time");
         jPanel1.add(jLabel22);
-        jLabel22.setBounds(540, 350, 110, 19);
+        jLabel22.setBounds(540, 350, 130, 22);
 
-        japtHour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        japtHour.addActionListener(new java.awt.event.ActionListener() {
+        jtime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 AM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM" }));
+        jtime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                japtHourActionPerformed(evt);
+                jtimeActionPerformed(evt);
             }
         });
-        jPanel1.add(japtHour);
-        japtHour.setBounds(680, 350, 72, 22);
-
-        jLabel23.setText(":");
-        jPanel1.add(jLabel23);
-        jLabel23.setBounds(760, 350, 40, 20);
-
-        japtMinute.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "15", "30", "45" }));
-        jPanel1.add(japtMinute);
-        japtMinute.setBounds(770, 350, 72, 22);
-
-        japtMeridiem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
-        jPanel1.add(japtMeridiem);
-        japtMeridiem.setBounds(860, 350, 72, 22);
+        jPanel1.add(jtime);
+        jtime.setBounds(680, 350, 85, 22);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1040, 610);
@@ -342,6 +330,7 @@ public class Appointment extends javax.swing.JFrame {
         jLabel19.setBounds(730, 370, 30, 16);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jageActionPerformed
@@ -366,66 +355,111 @@ public class Appointment extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+     
     
-        APPOINTMENT_CONFIRMATION confirmAppointment = new APPOINTMENT_CONFIRMATION();
-        
-        confirmAppointment.lblFirstName.setText(Appointment.jfirstname.getText());
-        confirmAppointment.lblLastName.setText(Appointment.jlastname.getText());
-        confirmAppointment.lblAge.setText(Appointment.jage.getText());
-               
-        String selectedBDay = birthDay.getSelectedItem().toString();
-        String selectedBMonth = birthMonth.getSelectedItem().toString();
-        String selectedBYear = birthYear.getSelectedItem().toString();
-        String birthDate = selectedBMonth + " " + selectedBDay + ", " + selectedBYear;
-        confirmAppointment.lblBDate.setText(birthDate);
-              
-        String gender = jRadioButton1.isSelected() ? "Male" : jRadioButton2.isSelected() ? "Female" : "Not Selected";
-        confirmAppointment.lblGender.setText(gender);
+       APPOINTMENT_CONFIRMATION confirmAppointment = new APPOINTMENT_CONFIRMATION();
 
-              
-        confirmAppointment.lblContactNumber.setText(Appointment.jcontactNumber.getText());
-        confirmAppointment.lblAddress.setText(Appointment.jaddress.getText());
-        confirmAppointment.lblEmailAddress.setText(Appointment.jemailAddress.getText());
-        
-        String selectedAppointmentType = appointmentType.getSelectedItem().toString();
-        confirmAppointment.lblAppointmentType.setText(selectedAppointmentType);
-          
-        String selectedAptMonth = japtMonth.getSelectedItem().toString();
-        String selectedAptDay = japtDay.getSelectedItem().toString();
-        String selectedAptYear = japtYear.getSelectedItem().toString();
-        String appointmentDate = selectedAptMonth + " " + selectedAptDay + ", " + selectedAptYear;
-        confirmAppointment.lblAppointmentDate.setText(appointmentDate);
-        
-        String selectedHour = japtHour.getSelectedItem().toString();
-        String selectedMinute = japtMinute.getSelectedItem().toString();
-        String selectedMeridiem = japtMeridiem.getSelectedItem().toString();
-        String appointmentTime = selectedHour + " : " + selectedMinute + " " + selectedMeridiem;
-        confirmAppointment.lblAptTime.setText(appointmentTime);
-        
-        HashMap<String, String> patientRecord = new HashMap<>();
-        String firstName = jfirstname.getText();
-        String lastName = jlastname.getText();
-        String age = jage.getText();
-        String contactNumber = jcontactNumber.getText();
-        String address = jaddress.getText();
-        String emailAddress = jemailAddress.getText();
-        
-        patientRecord.put("firstName", firstName);
-        patientRecord.put("lastName", lastName);
-        patientRecord.put("age", age);
-        patientRecord.put("contactNumber", contactNumber);
-        patientRecord.put("birthDate", birthDate);
-        patientRecord.put("gendder", gender);
-        patientRecord.put("address", address);
-        patientRecord.put("emailAddress", emailAddress);
-        patientRecord.put("selectedAppointmentType", selectedAppointmentType);
-        patientRecord.put("appointmentDate", appointmentDate);
-        patientRecord.put("appointmentTime", appointmentTime);
-        
-        AppointmentData.appointments.add(patientRecord);
-        
-        confirmAppointment.setVisible(true);
-        this.dispose();
+    // Restrict age input to numbers only
+    Appointment.jage.addKeyListener(new java.awt.event.KeyAdapter() {
+    public void keyTyped(java.awt.event.KeyEvent evt) {
+            char c = evt.getKeyChar();
+            if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+                evt.consume(); // Ignore the event if it's not a digit
+            }
+        }
+    });
+
+    // Restrict contact number input to numbers only
+    Appointment.jcontactNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+        char c = evt.getKeyChar();
+            if (!Character.isDigit(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+                evt.consume(); // Ignore the event if it's not a digit
+            }
+        }
+    });
+    
+    
+
+    if (jfirstname.getText().isEmpty() || jlastname.getText().isEmpty() || jage.getText().isEmpty() || jcontactNumber.getText().isEmpty() || jaddress.getText().isEmpty() || jemailAddress.getText().isEmpty() ) {
+    JOptionPane.showMessageDialog(null, "Please input all the required fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+    return;
+    }
+
+    // Validate age and contact number before setting the labels
+    if (!Appointment.jage.getText().matches("\\d+")) {
+        JOptionPane.showMessageDialog(null, "Please enter a valid numeric age.");
+        return; // Exit the function if validation fails
+    }
+
+    if (!Appointment.jcontactNumber.getText().matches("\\d+")) {
+        JOptionPane.showMessageDialog(null, "Please enter a valid numeric contact number.");
+        return; // Exit the function if validation fails
+    }
+
+    confirmAppointment.lblFirstName.setText(Appointment.jfirstname.getText());
+    confirmAppointment.lblLastName.setText(Appointment.jlastname.getText());
+    confirmAppointment.lblAge.setText(Appointment.jage.getText());
+
+    String selectedBDay = birthDay.getSelectedItem().toString();
+    String selectedBMonth = birthMonth.getSelectedItem().toString();
+    String selectedBYear = birthYear.getSelectedItem().toString();
+    String birthDate = selectedBMonth + " " + selectedBDay + ", " + selectedBYear;
+    confirmAppointment.lblBDate.setText(birthDate);
+
+    String gender = jRadioButton1.isSelected() ? "Male" : jRadioButton2.isSelected() ? "Female" : "Not Selected";
+    confirmAppointment.lblGender.setText(gender);
+
+    confirmAppointment.lblContactNumber.setText(Appointment.jcontactNumber.getText());
+    confirmAppointment.lblAddress.setText(Appointment.jaddress.getText());
+    confirmAppointment.lblEmailAddress.setText(Appointment.jemailAddress.getText());
+
+    String selectedAppointmentType = appointmentType.getSelectedItem().toString();
+    confirmAppointment.lblAppointmentType.setText(selectedAppointmentType);
+
+    String selectedAptMonth = japtMonth.getSelectedItem().toString();
+    String selectedAptDay = japtDay.getSelectedItem().toString();
+    String selectedAptYear = japtYear.getSelectedItem().toString();
+    String appointmentDate = selectedAptMonth + " " + selectedAptDay + ", " + selectedAptYear;
+    confirmAppointment.lblAppointmentDate.setText(appointmentDate);
+
+    HashSet<String> usedTimes = new HashSet<>();
+    String time = jtime.getSelectedItem().toString();
+    
+    if (AppointmentData.usedTimes.contains(time)) {
+    JOptionPane.showMessageDialog(null, "This time slot is already reserved. Please choose another time.", "Time Conflict", JOptionPane.ERROR_MESSAGE);
+    return; 
+}
+    AppointmentData.usedTimes.add(time);
+    confirmAppointment.lblAptTime.setText(time);
+
+    HashMap<String, String> patientRecord = new HashMap<>();
+    String firstName = jfirstname.getText();
+    String lastName = jlastname.getText();
+    String age = jage.getText();
+    String contactNumber = jcontactNumber.getText();
+    String address = jaddress.getText();
+    String emailAddress = jemailAddress.getText();
+    
+
+    patientRecord.put("firstName", firstName);
+    patientRecord.put("lastName", lastName);
+    patientRecord.put("age", age);
+    patientRecord.put("contactNumber", contactNumber);
+    patientRecord.put("birthDate", birthDate);
+    patientRecord.put("gender", gender);
+    patientRecord.put("address", address);
+    patientRecord.put("emailAddress", emailAddress);
+    patientRecord.put("selectedAppointmentType", selectedAppointmentType);
+    patientRecord.put("appointmentDate", appointmentDate);
+    patientRecord.put("appointmentTime", time);
+
+
+    AppointmentData.appointments.add(patientRecord);
+
+    confirmAppointment.setVisible(true);
+    this.dispose();
+
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -433,9 +467,9 @@ public class Appointment extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-    private void japtHourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_japtHourActionPerformed
+    private void jtimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtimeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_japtHourActionPerformed
+    }//GEN-LAST:event_jtimeActionPerformed
 
     private void japtMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_japtMonthActionPerformed
         // TODO add your handling code here:
@@ -511,7 +545,6 @@ public class Appointment extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -526,14 +559,12 @@ public class Appointment extends javax.swing.JFrame {
     public static javax.swing.JTextField jaddress;
     public static javax.swing.JTextField jage;
     public static javax.swing.JComboBox<String> japtDay;
-    public static javax.swing.JComboBox<String> japtHour;
-    public static javax.swing.JComboBox<String> japtMeridiem;
-    public static javax.swing.JComboBox<String> japtMinute;
     public static javax.swing.JComboBox<String> japtMonth;
     public static javax.swing.JComboBox<String> japtYear;
     public static javax.swing.JTextField jcontactNumber;
     public static javax.swing.JTextField jemailAddress;
     public static javax.swing.JTextField jfirstname;
     public static javax.swing.JTextField jlastname;
+    public static javax.swing.JComboBox<String> jtime;
     // End of variables declaration//GEN-END:variables
 }
